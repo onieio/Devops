@@ -1,0 +1,2 @@
+localhost   ansible_ss_host=localhost ansible_connection=local
+#ipaddress ssh_user= location=~/.pem

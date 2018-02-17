@@ -1,0 +1,6 @@
+#Ec2 variables
+
+region: ap-southeast-1
+instance_type: t2.micro
+ami: ami-b7f388cb
+keypair: final_dev

@@ -1,0 +1,16 @@
+- name: Create an Ec2 instance
+  ec2:
+      key_name: "{{ keypair }}"
+      group: devops_ec2 
+      instance_type: "{{ instance_type }}"
+      image: "{{ ami }}"
+      wait: true
+      region: "{{ region }}"
+      count: 1
+      count_tag:
+         Name: dev_project
+      instance_tags:
+         Name: dev_project
+      vpc_subnet_id: vpc-c0a71fa9
+      assign_public_ip: yes
+  register: ec2
