@@ -2,6 +2,6 @@
   connection: local
   gather_facts: False
   roles:
-    #- ec2
-    - jenkins
+    - ec2
+    #- jenkins
     #- lamp
