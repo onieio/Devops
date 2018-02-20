@@ -1,8 +1,11 @@
-- hosts: localhost
-  connection: local
+#- hosts: ec2_lamp
+- hosts: stage
+  #connection: local
   gather_facts: False
-  remote_user: ubuntu
+  become: true
+  #remote_user: ubuntu
   roles:
     - ec2
     #- jenkins
     #- lamp
+
