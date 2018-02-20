@@ -1,0 +1,2 @@
+[lamp-servers]
+13.127.176.247 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/home/rajendra/Desktop/Dev/proj10/devops_keypair.pem
