@@ -1,0 +1,10 @@
+- hosts: jenkins_server
+  gather_facts: False
+  tasks:
+  vars:
+    jenkins_hostname: localhost
+  roles:
+    - java
+    - jenkins
+  become: yes
+
