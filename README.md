@@ -28,5 +28,7 @@ You must have Ansible 2.3 installed.
 * PASSWORD: rajendra@75
 
 
+Note:
+test -e /usr/bin/python || (sudo apt -y update && sudo apt install -y python-minimal)
 
 
