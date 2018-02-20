@@ -20,7 +20,13 @@ You must have Ansible 2.3 installed.
 
 ### Setup
 * Add host in /etc/ansible/hosts file. See the given hosts file to add hosts.  
-* Run command `sudo ansible-playbook lamp-playbook.yml`
+  cd lamp/
+* Run command `sudo ansible-playbook -i hosts lamp-playbook.yml`
+ 
+* Run command `sudo ansible-playbook -i hosts playbook.yml`
+  cd jenkins/
+* Run command `sudo ansible-playbook -i inventory/jenkins-servers playbook`
+
 
 
 ### Database Configuration
