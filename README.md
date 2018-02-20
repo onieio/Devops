@@ -1,13 +1,22 @@
-# Ansible LAMP Stack Playbook
-This is a Ansible Playbook to deploy a LAMP Stack infrastructure on ubuntu/debian hosts. 
+# Ansible Ec2 spin up, Jenkins creation and LAMP Stack Playbooks
+Ec2 spin up with new *.pem file and updateting the hosts file aswell.
+Jenkins installation with Java8
+This is a Ansible Playbook to deploy a LAMP Stack infrastructure on ubuntu hosts. 
 
-### Stack -
+### Ec2
+* ec2
+### Jenkins
+* Jenkins
+### Stack - 
 * apache2
 * mysql 
 * php7.0-fpm 
 
 ### Pre-requisites
+Boto (Aws Acccess/Secret key)
+python 2
 You must have Ansible 2.3 installed.
+
 
 ### Setup
 * Add host in /etc/ansible/hosts file. See the given hosts file to add hosts.  
@@ -16,7 +25,7 @@ You must have Ansible 2.3 installed.
 
 ### Database Configuration
 * USERNAME: root
-* PASSWORD: [update the variable "mysql_root_password" in lamp-playbook.yml]
+* PASSWORD: rajendra@75
 
 
 
