@@ -1,0 +1,17 @@
+---
+apache_ubuntu_packages:
+  - apache2
+  - apache2-utils
+
+#ssl_cert_path: "/etc/apache2/ssl/cert.pem"
+#ssl_key_path: "/etc/apache2/ssl/privkey.pem"
+#ssl_chain_path: "/etc/apache2/ssl/fullchain.pem"
+redirect_port: 8080
+
+APACHE_SITES:
+  - sitename: "jenkins.eulerdev.in"
+    servername: "jenkins.eulerdev.in"
+    serveradmin: "admin@eulerdev.in"
+    listen: "80"
+    rewrite: True
+    state: link

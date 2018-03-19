@@ -1,0 +1,37 @@
+step1:
+ssh-keygen and copy the ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys
+
+step2:
+add ip and hostname /etc/hosts
+56.23.14.11 jenkins.eulerdev.in
+
+change hostname /etc/hostname
+jenkins.eulerdev.in
+
+step3:
+
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+
+step4:
+Create an organizaton on github and generate clientID and Client secret
+
+step5:
+A record at amazon(if you hosted on aws)
+
+Error:
+Failed to start a listener: winstone.Ajp13ConnectorFactory
+Solution:
+
+down vote
+Solved the problem.
+
+Go to line 122 in /etc/init.d/jenkins
+
+Replace  $SU -l $JENKINS_USER --shell=/bin/bash -c "$DAEMON $DAEMON_ARGS -- $JAVA $JAVA_ARGS -jar $JENKINS_WAR $JENKINS_ARGS" || return 2
+
+To $SU -l $JENKINS_USER --shell=/bin/bash -c "$DAEMON $DAEMON_ARGS -- $JAVA $JAVA_ARGS -jar $JENKINS_WAR $JENKINS_ARGS --ajp13Port=-1" || return 2
+

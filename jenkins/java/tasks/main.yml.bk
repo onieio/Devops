@@ -1,0 +1,36 @@
+---
+- name: Download Java
+  command: "wget -q -O {{java_archive}} --no-check-certificate --no-cookies --headers 'Cookie:oraclelicense=accept-securebackup-cookie' {{download_url}} creates={{java_archive}}"
+
+- name: Unpack archive
+  command: "tar -zxf {{java_archive}} -C {{download_folder}} creates={{java_name}}"
+
+- name: Fix ownership
+  file: state=directory path={{java_name}} owner=root group=root recurse=yes
+
+- name: Make Java available for system
+  command: 'alternatives --install "/usr/bin/java" "java" "{{java_name}}/bin/java" 2000'
+
+#- name: Add JAVA PPA apt key
+#  apt_key:
+#    id: "{{ JAVA_PPA_KEY_ID }}"
+#    keyserver: "{{ JAVA_PPA_KEY_SERVER }}"
+#    state: present
+
+#- name: Add custom JAVA PPA
+#  apt_repository:
+#    repo: "{{ JAVA_PPA }}"
+#    state: present
+
+#- name: Automatically select the Oracle License
+#  debconf:
+#    name: "oracle-java{{ JAVA_VERSION }}-installer"
+#    question: "shared/accepted-oracle-license-v1-1"
+#    value: "true"
+#    vtype: "select"
+
+#- name: Install Oracle Java
+#  apt:
+#    name: "oracle-java{{ JAVA_VERSION }}-installer"
+#    update_cache: yes
+#    state: present

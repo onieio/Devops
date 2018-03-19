@@ -1,0 +1,18 @@
+---
+download_url: http://ftp.osuosl.org/pub/funtoo/distfiles/oracle-java/jdk-7u80-linux-x64.tar.gz
+download_folder: /opt
+java_name: "{{download_folder}}/jdk1.7.0_80"
+java_archive: "{{download_folder}}/jdk-7u80-linux-x64.tar.gz"
+
+# Version of the Java that you want to install either 7 or 8
+JAVA_VERSION: "7"
+JAVA_PPA_KEY_ID: "EEA14886"
+JAVA_PPA_KEY_SERVER: "keyserver.ubuntu.com"
+JAVA_PPA: "ppa:webupd8team/java"
+
+
+oracle_java_version: 7
+oracle_java_cache_valid_time: 3600
+oracle_java_home: "/usr/lib/jvm/java-{{ oracle_java_version }}-oracle"
+oracle_java_os_supported: yes
+oracle_java_state: latest
