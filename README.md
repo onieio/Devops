@@ -31,7 +31,6 @@ You must have Ansible 2.3 installed.
 
 ### Database Configuration
 * USERNAME: root
-* PASSWORD: rajendra@75
 
 
 Note:
